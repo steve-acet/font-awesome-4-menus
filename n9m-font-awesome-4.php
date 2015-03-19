@@ -144,6 +144,17 @@ class FontAwesomeFour {
                     unset( $class_array[ $key ] );
                 }
             }
+            if( 'icon' == substr( $val, 0, 4 ) ){
+                if( 'icon' == $val ){
+                    unset( $class_array[ $key ] );
+                } elseif( 'fa-after' == $val ){
+                    $before = false;
+                    unset( $class_array[ $key ] );
+                } else {
+                    $fontawesome_classes[] = $val;
+                    unset( $class_array[ $key ] );
+                }
+            }
         }
         
         if( !empty( $fontawesome_classes ) ){
